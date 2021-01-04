@@ -32,7 +32,10 @@ namespace Store.Tests.Domain
         [TestCategory("Domain")]
         public void Dado_um_pagamento_do_pedido_seu_status_deve_ser_aguardando_entrega()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, null);
+            order.AddItem(_product, 2);
+            order.Pay(_product.Price * 2);
+            Assert.AreEqual(order.Status, EOrderStatus.WaitingDelivery);
         }
 
         [TestMethod]
