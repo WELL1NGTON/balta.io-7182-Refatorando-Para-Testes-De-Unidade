@@ -20,6 +20,7 @@ namespace Store.Domain.Entities
             Number = Guid.NewGuid().ToString().Substring(0, 8);
             Status = EOrderStatus.WaitingPayment;
             Discount = discount;
+            DeliveryFee = deliveryFee;
             Items = new List<OrderItem>();
         }
 
