@@ -78,7 +78,10 @@ namespace Store.Tests.Domain
         [TestCategory("Domain")]
         public void Dado_um_desconto_expirado_o_valor_do_pedido_deve_ser_60()
         {
-            Assert.Fail();
+            Discount discount = new Discount(10, DateTime.Now.AddDays(-5));
+            var order = new Order(_customer, 10, discount);
+            order.AddItem(_product, 5);
+            Assert.AreEqual(60, order.Total());
         }
 
         [TestMethod]
