@@ -115,7 +115,9 @@ namespace Store.Tests.Domain
         [TestCategory("Domain")]
         public void Dado_um_pedido_sem_cliente_o_mesmo_deve_ser_invalido()
         {
-            Assert.Fail();
+            var order = new Order(null, 10, _discount);
+            order.AddItem(_product, 6);
+            Assert.IsFalse(order.Valid);
         }
     }
 }
