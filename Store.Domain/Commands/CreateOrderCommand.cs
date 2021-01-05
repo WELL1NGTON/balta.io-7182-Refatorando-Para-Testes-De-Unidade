@@ -31,6 +31,11 @@ namespace Store.Domain.Commands
                 .Requires()
                 .HasLen(Customer, 11, "Customer", "Cliente inválido")
                 .HasLen(ZipCode, 8, "ZipCode", "CEP inválido")
+
+                // Aparentemente o flunt está fazendo a verificação de forma errada
+                // "val <= comparer" ao invés de "val > comparer"
+                // TODO: Lembrar de adicionar um Issue sobre esse problema
+                .IsGreaterThan(Items.Count, 0, "Items", "O pedido deve conter pelo menos um item")
             );
         }
     }
