@@ -1,5 +1,5 @@
 using Store.Domain.Entities;
-using Store.Domain.Repositories;
+using Store.Domain.Repositories.Interfaces;
 
 // Mocks "Existem frameworks que fazem isso bem mais fácil"
 namespace Store.Tests.Repositories

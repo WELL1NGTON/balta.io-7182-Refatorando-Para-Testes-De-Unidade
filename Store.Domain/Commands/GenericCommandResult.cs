@@ -1,10 +1,10 @@
 using Store.Domain.Commands.Interfaces;
 
-namespace Store.Domain.Commands.Commands
+namespace Store.Domain.Commands
 {
-    public class GenericCommand : ICommandResult
+    public class GenericCommandResult : ICommandResult
     {
-        public GenericCommand(bool success, string message, object data)
+        public GenericCommandResult(bool success, string message, object data)
         {
             Success = success;
             Message = message;
